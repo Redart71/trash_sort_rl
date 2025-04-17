@@ -1,45 +1,33 @@
-### Structure du projet
-
-# dossier : trash_sort_rl/
-# ├── main.py              <-- Lancement du jeu
-# ├── env/
-# │   ├── __init__.py
-# │   ├── trash_env.py     <-- Logique des objets et du jeu
-# │   └── trash_object.py  <-- Classe de déchets
-# └── assets/              <-- Pour les images plus tard (optionnel)
-
-
-### Fichier : env/trash_object.py
-
 import random
 import pygame
 
 
 class TrashObject:
-    def __init__(self, name, category, color):
+    def __init__(self, name, category, image_path):
         self.name = name
-        self.category = category  # "jaune", "bleue", "verte", "noire"
-        self.color = color
+        self.category = category
         self.x = 0
-        self.y = 250  # Position verticale fixe (milieu du tapis)
+        self.y = 250
         self.speed = 2
+        self.image = pygame.image.load(image_path).convert_alpha()
+        self.image = pygame.transform.scale(self.image, (80, 40))
 
     def move(self, speed_multiplier):
         self.x += self.speed * speed_multiplier
 
     def draw(self, screen, font):
-        pygame.draw.rect(screen, self.color, (self.x, self.y, 80, 40))
+        screen.blit(self.image, (self.x, self.y))
         text = font.render(self.name, True, (0, 0, 0))
-        screen.blit(text, (self.x + 5, self.y + 10))
+        screen.blit(text, (self.x + 5, self.y + 45))
 
     @staticmethod
     def generate_random():
         types = [
-            ("bouteille plastique", "jaune", (255, 255, 0)),
-            ("carton pizza", "jaune", (255, 255, 0)),
-            ("journal", "bleue", (0, 0, 255)),
-            ("papier", "bleue", (0, 0, 255)),
-            ("verre", "verte", (0, 255, 0)),
-            ("canette alu", "noire", (50, 50, 50))
+            ("bouteille plastique", "jaune", "assets/bouteille-en-plastique.png"),
+            ("carton pizza", "jaune", "assets/pizza.png"),
+            ("journal", "bleue", "assets/journal.png"),
+            ("papier", "bleue", "assets/papier-froisse.png"),
+            ("verre", "verte", "assets/verre-brise.png"),
+            ("canette alu", "noire", "assets/canette-de-soda.png")
         ]
         return TrashObject(*random.choice(types))

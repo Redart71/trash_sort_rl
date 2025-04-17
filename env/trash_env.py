@@ -8,7 +8,7 @@ class TrashSortEnv:
         self.screen_height = screen_height
         self.trash_objects = []
         self.spawn_timer = 0
-        self.spawn_interval = 60  # frames
+        self.spawn_interval = 60
         self.speed_multiplier = 1.0
         self.score = 0
         self.total_steps = 0
@@ -65,9 +65,10 @@ class TrashSortEnv:
 
         # Dessiner les poubelles
         for label, (x_pos, color) in self.bins.items():
-            pygame.draw.rect(screen, color, (x_pos, 240, 80, 60))
+            pygame.draw.rect(screen, color, (x_pos, 170, 80, 60))
             text = self.font.render(label.upper(), True, (0, 0, 0))
-            screen.blit(text, (x_pos + 10, 245))
+            text_rect = text.get_rect(center=(x_pos + 40, 170 - 15))
+            screen.blit(text, text_rect)
 
         # Score
         score_text = self.font.render(f"Score : {self.score}", True, (0, 0, 0))
