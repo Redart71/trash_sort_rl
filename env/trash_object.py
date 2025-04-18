@@ -7,7 +7,7 @@ class TrashObject:
         self.name = name
         self.category = category
         self.x = 0
-        self.y = 250
+        self.y = 340
         self.speed = 2
         self.image = pygame.image.load(image_path).convert_alpha()
         self.image = pygame.transform.scale(self.image, (80, 40))
@@ -17,7 +17,7 @@ class TrashObject:
 
     def draw(self, screen, font):
         screen.blit(self.image, (self.x, self.y))
-        text = font.render(self.name, True, (0, 0, 0))
+        text = font.render(self.name, True, (255, 255, 255))
         screen.blit(text, (self.x + 5, self.y + 45))
 
     @staticmethod

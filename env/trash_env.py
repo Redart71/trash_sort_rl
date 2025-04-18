@@ -61,10 +61,10 @@ class TrashSortEnv:
         if not self.font:
             self.font = pygame.font.SysFont(None, 24)
 
-        screen.fill((200, 200, 200))
+        # screen.fill((200, 200, 200))
 
         # Dessiner tapis roulant
-        pygame.draw.rect(screen, (150, 150, 150), (0, 240, self.screen_width, 60))
+        # pygame.draw.rect(screen, (150, 150, 150), (0, 340, self.screen_width, 60))
 
         # Dessiner les objets
         for obj in self.trash_objects:
@@ -73,15 +73,15 @@ class TrashSortEnv:
         # Dessiner les poubelles
         for label, (x_pos,_) in self.bins.items():
             # Dessiner image de poubelle
-            screen.blit(self.bin_images[label], (x_pos, 170))
+            screen.blit(self.bin_images[label], (x_pos, 260))
 
             # Dessiner le texte au-dessus
-            text = self.font.render(label.upper(), True, (0, 0, 0))
-            text_rect = text.get_rect(center=(x_pos + 40, 170 - 15))
+            text = self.font.render(label.upper(), True, (255, 255, 255))
+            text_rect = text.get_rect(center=(x_pos + 40, 260 - 15))
             screen.blit(text, text_rect)
 
         # Score
-        score_text = self.font.render(f"Score : {self.score}", True, (0, 0, 0))
+        score_text = self.font.render(f"Score : {self.score}", True, (255, 255, 255))
         screen.blit(score_text, (10, 10))
 
     def handle_action(self, action_bin):
