@@ -12,15 +12,10 @@ class TrashSortEnv:
         self.speed_multiplier = 1.0
         self.score = 0
         self.total_steps = 0
-        self.max_steps = 1800  # ~60s at 30 FPS
+        self.max_steps = 1800
         self.font = None
 
-        self.bin_images = {
-            "jaune": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png"), (80, 60)),
-            "bleue": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png"), (80, 60)),
-            "verte": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png"), (80, 60)),
-            "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png"), (80, 60)),
-        }
+        self.bin_images = {}
 
         # Poubelles (x position, color, label)
         self.bins = {
@@ -28,6 +23,15 @@ class TrashSortEnv:
             "bleue": (screen_width - 180, (0, 0, 255)),
             "verte": (screen_width - 270, (0, 255, 0)),
             "noire": (screen_width - 360, (50, 50, 50)),
+        }
+
+    def load_assets(self):
+        """À appeler après pygame.display.set_mode()"""
+        self.bin_images = {
+            "jaune": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png").convert_alpha(), (80, 60)),
+            "bleue": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png").convert_alpha(), (80, 60)),
+            "verte": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png").convert_alpha(), (80, 60)),
+            "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png").convert_alpha(), (80, 60)),
         }
 
     def reset(self):
@@ -96,3 +100,10 @@ class TrashSortEnv:
 
     def is_done(self):
         return self.total_steps >= self.max_steps
+    
+    def get_observation(self):
+        if not self.trash_objects:
+            return 0  # ou un index par défaut
+        categories = ["jaune", "bleue", "verte", "noire"]
+        return categories.index(self.trash_objects[0].category)
+

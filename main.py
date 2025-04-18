@@ -10,6 +10,7 @@ clock = pygame.time.Clock()
 pygame.display.set_caption("Jeu de tri des déchets")
 
 env = TrashSortEnv(screen_width, screen_height)
+env.load_assets()
 env.reset()
 
 # Mapping clavier -> poubelles
