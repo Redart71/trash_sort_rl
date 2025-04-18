@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 from env.gym_wrapper import GymTrashSortWrapper
+
 
 # Paramètres Q-learning
 alpha = 0.1    
@@ -51,8 +53,7 @@ for episode in range(n_episodes):
         avg = np.mean(scores[-50:])
         print(f"Episode {episode+1}/{n_episodes} | Moyenne score (50 derniers) : {avg:.2f} | Epsilon: {epsilon:.3f}")
 
-
-import seaborn as sns
+np.save("q_table.npy", Q)
 
 # Affichage de la Q-table
 plt.figure(figsize=(8, 4))

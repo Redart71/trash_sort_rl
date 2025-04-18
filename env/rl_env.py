@@ -8,7 +8,7 @@ class TrashSortGymEnv:
         self.reset()
 
     def reset(self):
-        self.trash_queue = [TrashObject.generate_random() for _ in range(3)]
+        self.trash_queue = [TrashObject.generate_random(headless=True) for _ in range(3)]
         self.current_step = 0
         self.max_steps = 1800
         self.score = 0
@@ -19,7 +19,7 @@ class TrashSortGymEnv:
         reward = 0
 
         if len(self.trash_queue) == 0:
-            self.trash_queue.append(TrashObject.generate_random())
+            self.trash_queue.append(TrashObject.generate_random(headless=True))
 
         obj = self.trash_queue.pop(0)
 
@@ -34,7 +34,8 @@ class TrashSortGymEnv:
         else:
             reward = -1
 
-        self.trash_queue.append(TrashObject.generate_random())
+        self.trash_queue.append(TrashObject.generate_random(headless=True))
+
         self.current_step += 1
 
         if self.current_step >= self.max_steps:

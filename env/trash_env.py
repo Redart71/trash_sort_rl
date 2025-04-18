@@ -16,19 +16,19 @@ class TrashSortEnv:
         self.font = None
 
         self.bin_images = {
-            "Plastique": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png"), (80, 60)),
-            "Papier": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png"), (80, 60)),
-            "Verre": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png"), (80, 60)),
-            "Non recyclable": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png"), (80, 60)),
+            "jaune": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png"), (80, 60)),
+            "bleue": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png"), (80, 60)),
+            "verte": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png"), (80, 60)),
+            "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png"), (80, 60)),
         }
 
 
         # Poubelles (x position, color, label)
         self.bins = {
-            "Plastique": (screen_width - 120, (255, 255, 0)),
-            "Papier": (screen_width - 250, (0, 0, 255)),
-            "Verre": (screen_width - 380, (0, 255, 0)),
-            "Non recyclable": (screen_width - 510, (50, 50, 50)),
+            "jaune": (screen_width - 120, (255, 255, 0)),
+            "bleue": (screen_width - 250, (0, 0, 255)),
+            "verte": (screen_width - 380, (0, 255, 0)),
+            "noire": (screen_width - 510, (50, 50, 50)),
         }
 
     def load_assets(self):
@@ -40,14 +40,6 @@ class TrashSortEnv:
             "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png").convert_alpha(), (80, 60)),
         }
 
-    def load_assets(self):
-        """À appeler après pygame.display.set_mode()"""
-        self.bin_images = {
-            "jaune": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png").convert_alpha(), (80, 60)),
-            "bleue": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png").convert_alpha(), (80, 60)),
-            "verte": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png").convert_alpha(), (80, 60)),
-            "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png").convert_alpha(), (80, 60)),
-        }
 
     def reset(self):
         self.trash_objects = []
