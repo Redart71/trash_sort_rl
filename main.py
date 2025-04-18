@@ -47,7 +47,7 @@ while running:
 
     env.draw(screen)
     pygame.display.flip()
-    clock.tick(30)
+    clock.tick(70)
 
     if env.is_done():
         print("Fin de la partie. Score final :", env.score)
