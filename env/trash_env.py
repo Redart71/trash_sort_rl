@@ -16,18 +16,19 @@ class TrashSortEnv:
         self.font = None
 
         self.bin_images = {
-            "jaune": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png"), (80, 60)),
-            "bleue": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png"), (80, 60)),
-            "verte": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png"), (80, 60)),
-            "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png"), (80, 60)),
+            "Plastique": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png"), (80, 60)),
+            "Papier": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png"), (80, 60)),
+            "Verre": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png"), (80, 60)),
+            "Non recyclable": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png"), (80, 60)),
         }
+
 
         # Poubelles (x position, color, label)
         self.bins = {
-            "jaune": (screen_width - 90, (255, 255, 0)),
-            "bleue": (screen_width - 180, (0, 0, 255)),
-            "verte": (screen_width - 270, (0, 255, 0)),
-            "noire": (screen_width - 360, (50, 50, 50)),
+            "Plastique": (screen_width - 120, (255, 255, 0)),
+            "Papier": (screen_width - 250, (0, 0, 255)),
+            "Verre": (screen_width - 380, (0, 255, 0)),
+            "Non recyclable": (screen_width - 510, (50, 50, 50)),
         }
 
     def reset(self):
