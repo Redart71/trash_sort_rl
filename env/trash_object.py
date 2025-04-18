@@ -6,7 +6,7 @@ class TrashObject:
         self.name = name
         self.category = category
         self.x = 0
-        self.y = 250
+        self.y = 340
         self.speed = 2
         self.headless = headless
 
@@ -20,29 +20,24 @@ class TrashObject:
         self.x += self.speed * speed_multiplier
 
     def draw(self, screen, font):
-        if self.headless:
-            # Dessine un rectangle coloré à la place
-            color_map = {
-                "jaune": (255, 255, 0),
-                "bleue": (0, 0, 255),
-                "verte": (0, 255, 0),
-                "noire": (50, 50, 50)
-            }
-            pygame.draw.rect(screen, color_map.get(self.category, (128, 128, 128)), (self.x, self.y, 80, 40))
-        else:
-            screen.blit(self.image, (self.x, self.y))
-
-        text = font.render(self.name, True, (0, 0, 0))
-        screen.blit(text, (self.x + 5, self.y + 45))
+        screen.blit(self.image, (self.x, self.y))
+        # text = font.render(self.name, True, (255, 255, 255))
+        # screen.blit(text, (self.x + 5, self.y + 45))
 
     @staticmethod
     def generate_random(headless=False):
         types = [
-            ("bouteille plastique", "jaune", "assets/bouteille-en-plastique.png"),
-            ("carton pizza", "jaune", "assets/pizza.png"),
-            ("journal", "bleue", "assets/journal.png"),
-            ("papier", "bleue", "assets/papier-froisse.png"),
-            ("verre", "verte", "assets/verre-brise.png"),
-            ("canette alu", "noire", "assets/canette-de-soda.png")
+            ("bouteille plastique", "Plastique", "assets/bouteille-en-plastique.png"),
+            ("carton pizza", "Papier", "assets/pizza.png"),
+            ("journal", "Papier", "assets/journal.png"),
+            ("papier", "Papier", "assets/papier-froisse.png"),
+            ("verre", "Verre", "assets/verre-brise.png"),
+            ("canette alu", "Non recyclable", "assets/canette-de-soda.png"),
+            # Add more trash objects here
+            ("champagne", "verre", "assets/champagne.png"),
+            ("The", "Non recyclable", "assets/the-vert.png"),
+            ("Chaussure", "Non recyclable", "assets/des-chaussures.png"),
+            ("Livre", "Papier", "assets/des-chaussures.png"),
+
         ]
         return TrashObject(*random.choice(types), headless=headless)

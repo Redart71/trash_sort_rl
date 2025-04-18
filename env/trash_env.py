@@ -15,14 +15,29 @@ class TrashSortEnv:
         self.max_steps = 1800
         self.font = None
 
-        self.bin_images = {}
+        self.bin_images = {
+            "Plastique": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png"), (80, 60)),
+            "Papier": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png"), (80, 60)),
+            "Verre": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png"), (80, 60)),
+            "Non recyclable": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png"), (80, 60)),
+        }
+
 
         # Poubelles (x position, color, label)
         self.bins = {
-            "jaune": (screen_width - 90, (255, 255, 0)),
-            "bleue": (screen_width - 180, (0, 0, 255)),
-            "verte": (screen_width - 270, (0, 255, 0)),
-            "noire": (screen_width - 360, (50, 50, 50)),
+            "Plastique": (screen_width - 120, (255, 255, 0)),
+            "Papier": (screen_width - 250, (0, 0, 255)),
+            "Verre": (screen_width - 380, (0, 255, 0)),
+            "Non recyclable": (screen_width - 510, (50, 50, 50)),
+        }
+
+    def load_assets(self):
+        """À appeler après pygame.display.set_mode()"""
+        self.bin_images = {
+            "jaune": pygame.transform.scale(pygame.image.load("assets/poubelle-jaune.png").convert_alpha(), (80, 60)),
+            "bleue": pygame.transform.scale(pygame.image.load("assets/poubelle-bleue.png").convert_alpha(), (80, 60)),
+            "verte": pygame.transform.scale(pygame.image.load("assets/poubelle-verte.png").convert_alpha(), (80, 60)),
+            "noire": pygame.transform.scale(pygame.image.load("assets/poubelle-noire.png").convert_alpha(), (80, 60)),
         }
 
     def load_assets(self):
@@ -65,10 +80,10 @@ class TrashSortEnv:
         if not self.font:
             self.font = pygame.font.SysFont(None, 24)
 
-        screen.fill((200, 200, 200))
+        # screen.fill((200, 200, 200))
 
         # Dessiner tapis roulant
-        pygame.draw.rect(screen, (150, 150, 150), (0, 240, self.screen_width, 60))
+        # pygame.draw.rect(screen, (150, 150, 150), (0, 340, self.screen_width, 60))
 
         # Dessiner les objets
         for obj in self.trash_objects:
@@ -77,15 +92,15 @@ class TrashSortEnv:
         # Dessiner les poubelles
         for label, (x_pos,_) in self.bins.items():
             # Dessiner image de poubelle
-            screen.blit(self.bin_images[label], (x_pos, 170))
+            screen.blit(self.bin_images[label], (x_pos, 260))
 
             # Dessiner le texte au-dessus
-            text = self.font.render(label.upper(), True, (0, 0, 0))
-            text_rect = text.get_rect(center=(x_pos + 40, 170 - 15))
+            text = self.font.render(label.upper(), True, (255, 255, 255))
+            text_rect = text.get_rect(center=(x_pos + 40, 260 - 15))
             screen.blit(text, text_rect)
 
         # Score
-        score_text = self.font.render(f"Score : {self.score}", True, (0, 0, 0))
+        score_text = self.font.render(f"Score : {self.score}", True, (255, 255, 255))
         screen.blit(score_text, (10, 10))
 
     def handle_action(self, action_bin):
