@@ -22,7 +22,7 @@ cd trash_sort_rl
 
 2. Configurer l'environnement :
 
-Assurez-vous d'avoir Python 3.x installé. Vous pouvez créer un environnement virtuel pour isoler les dépendances du projet :
+Assurez-vous d'avoir Python 3.12.3 installé. Vous pouvez créer un environnement virtuel pour isoler les dépendances du projet :
 
 ```
 python -m venv env
