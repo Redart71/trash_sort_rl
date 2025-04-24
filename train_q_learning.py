@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from env.gym_wrapper import GymTrashSortWrapper
+from env.gym_wrapper_q_learning import GymTrashSortWrapper
 
 
 # Paramètres Q-learning
