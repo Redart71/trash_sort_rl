@@ -16,8 +16,8 @@ Ce projet vise à développer un agent d'apprentissage par renforcement pour le 
 
 Chaque état dans TriXel correspond à un objet TrashObject placé sur une ligne de tri. Cet objet est caractérisé par :
 
-* name : nom spécifique de l’objet (ex. : bouteille plastique, journal, verre, etc.).
-* category : catégorie attendue pour le tri (ex. : Plastique, Papier, Verre, Non recyclable).
+* **name** : nom spécifique de l’objet (ex. : bouteille plastique, journal, verre, etc.).
+* **category** : catégorie attendue pour le tri (ex. : Plastique, Papier, Verre, Non recyclable).
 
 L’état est donc défini par l’identité de l’objet courant à trier.
 
@@ -66,16 +66,16 @@ Ce mécanisme incite l'agent à apprendre des politiques de tri efficaces en max
 
 Q-learning est un algorithme basé sur une table Q Q(s, a) qui enregistre les récompenses attendues pour chaque couple état/action.
 
-Formule de mise à jour :
+**Formule de mise à jour :**
 ```
 Q(s, a) ← Q(s, a) + α [r + γ max Q(s', a') - Q(s, a)]
 ```
 
-* α : taux d’apprentissage
-* γ : facteur de discount
-* r : récompense
-* s' : état suivant
-* a' : meilleure action suivante
+* **α** : taux d’apprentissage
+* **γ** : facteur de discount
+* **r** : récompense
+* **s'** : état suivant
+* **a'** : meilleure action suivante
 
 Idéal pour des environnements simples avec un nombre limité d'états.
 
@@ -97,13 +97,13 @@ Fonctionnement :
 
 Pour installer et exécuter ce projet localement, suivez ces étapes :
 
-1. Cloner le dépôt :
+**1. Cloner le dépôt :**
 ```
 git clone https://github.com/Redart71/trash_sort_rl.git
 cd trash_sort_rl
 ```
 
-2. Configurer l'environnement :
+**2. Configurer l'environnement :**
 
 Assurez-vous d'avoir Python 3.12.3 installé. Vous pouvez créer un environnement virtuel pour isoler les dépendances du projet :
 
@@ -115,25 +115,24 @@ source env/bin/activate
 env\Scripts\activate
 ```
 
-3. Installer les dépendances :
-
+**3. Installer les dépendances :**
 ```
 pip install -r requirements.txt
 ```
 
 ## Utilisation
 
-* Entraîner l'agent :
+* **Entraîner l'agent :**
 ```
 python train_q_learning.py
 ```
 
-* Jouer avec l'agent entraîné :
+* **Jouer avec l'agent entraîné :**
 ```
 python play_with_agent.py
 ```
 
-* Entraîner l'agent de manière aléatoire :
+* **Entraîner l'agent de manière aléatoire :**
 ```
 python train_random_agent.py
 ```
