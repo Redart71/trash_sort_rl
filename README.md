@@ -151,7 +151,7 @@ python train_random_agent.py
 
 | Fichier/Dossier | Description |
 |:--------------|:-------------|
-|assets/ | Ressources graphiques pour les objets|
+|assets/ | Ressources graphiques pour les objets (Source: flaticon)|
 |env/ | Environnement virtuel (local)|
 |.gitignore | Fichiers/dossiers ignorés par Git|
 |main.py | Script principal de lancement|
