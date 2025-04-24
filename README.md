@@ -7,7 +7,7 @@ Ce projet vise à développer un agent d'apprentissage par renforcement pour le 
 <br>
 
 <p align="center">
-  <img src="assets/demo.gif" width="900" alt="Démo du projet"/>
+  <img src="assets/demo.gif" width="700" alt="Démo du projet"/>
 </p>
 
 <br>
