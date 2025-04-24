@@ -137,15 +137,20 @@ while running:
         subprocess.run(["python", "play_with_agent.py"])
         sys.exit()
 
+    elif game_state == "dqn":
+        pygame.quit()
+        subprocess.run(["python", "play_with_agent_dqn.py"])
+        sys.exit()
 
-    elif game_state in ["dqn"]:
+
+"""     elif game_state in ["dqn"]:
         # Pour l’instant : placeholder, on affiche juste un message
         screen.fill((0, 0, 0))
         txt = font.render(f"{game_state.upper()} Agent en cours...", True, (255, 255, 255))
         screen.blit(txt, txt.get_rect(center=(screen_width//2, screen_height//2)))
         pygame.display.flip()
         pygame.time.delay(2000)
-        game_state = "menu"
+        game_state = "menu" """
 
 pygame.quit()
 sys.exit()
