@@ -57,7 +57,7 @@ np.save("q_table.npy", Q)
 
 # Affichage de la Q-table
 plt.figure(figsize=(8, 4))
-sns.heatmap(Q, annot=True, cmap="YlGnBu", xticklabels=["jaune", "bleue", "verte", "noire", "rien"], yticklabels=["jaune", "bleue", "verte", "noire"])
+sns.heatmap(Q, annot=True, cmap="YlGnBu", xticklabels=["Plastique","Papier" ,"Verre", "Non recyclable", "rien"], yticklabels=["Plastique", "Papier", "Verre", "Non recyclable","rien"])
 plt.title("Q-table finale (valeurs Q)")
 plt.xlabel("Actions")
 plt.ylabel("États (type de déchet)")

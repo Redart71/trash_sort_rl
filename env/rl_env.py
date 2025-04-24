@@ -3,7 +3,7 @@ from .trash_object import TrashObject
 
 class TrashSortGymEnv:
     def __init__(self):
-        self.categories = ["jaune", "bleue", "verte", "noire"]
+        self.categories = ["Plastique", "Papier" ,"Verre", "Non recyclable"]
         self.action_space = 5  # 0=jaune, 1=bleue, 2=verte, 3=noire, 4=rien faire
         self.reset()
 
