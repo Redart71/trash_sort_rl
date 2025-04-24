@@ -161,7 +161,7 @@ python train_random_agent.py
 |train_random_agent.py | Entraînement d’un agent aléatoire (baseline)|
 
 
-## Documentation
+## Présentation
 
 Voici le lien vers notre présentation du projet :
 
