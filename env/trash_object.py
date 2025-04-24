@@ -33,7 +33,6 @@ class TrashObject:
             ("papier", "Papier", "assets/papier-froisse.png"),
             ("verre", "Verre", "assets/verre-brise.png"),
             ("canette alu", "Non recyclable", "assets/canette-de-soda.png"),
-            # Add more trash objects here
             ("champagne", "Verre", "assets/champagne.png"),
             ("The", "Non recyclable", "assets/the-vert.png"),
             ("Chaussure", "Non recyclable", "assets/des-chaussures.png"),
