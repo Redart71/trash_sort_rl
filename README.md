@@ -132,19 +132,24 @@ pip install -r requirements.txt
 
 ## Utilisation
 
+* **Jouer au jeu :**
+```
+python main.py
+```
+
 * **Entraîner l'agent :**
 ```
 python train_q_learning.py
 ```
 
-* **Jouer avec l'agent entraîné :**
-```
-python play_with_agent.py
-```
-
 * **Entraîner l'agent de manière aléatoire :**
 ```
 python train_random_agent.py
+```
+
+* **Jouer avec l'agent entraîné :**
+```
+python play_with_agent.py
 ```
 
 ## Structure du projet
