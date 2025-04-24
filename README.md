@@ -93,7 +93,7 @@ Idéal pour des environnements simples avec un nombre limité d'états.
 
 Le DQN est une extension du Q-learning qui utilise un réseau de neurones profond pour approximer la fonction Q, permettant de gérer des espaces d'états plus complexes et continus.
 
-Fonctionnement :
+**Fonctionnement :**
 
 1. Utilisation d'un réseau de neurones pour approximer Q(s, a; θ), où θ représente les poids du réseau.
 
