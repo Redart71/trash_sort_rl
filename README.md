@@ -159,3 +159,10 @@ python train_random_agent.py
 |q_table.npy | Table Q sauvegardée pour l’agent Q-learning|
 |train_q_learning.py | Entraînement de l’agent avec Q-learning|
 |train_random_agent.py | Entraînement d’un agent aléatoire (baseline)|
+
+
+##Documentation
+Voici le lien vers notre présentation du projet
+[Visiter la présentation](https://docs.google.com/presentation/d/1vx4CnSR4VPZMY4IjyahBB1gRF03MeZrdpMkAX3EpuAA/edit#slide=id.g217bfa52807_0_0)
+
+
