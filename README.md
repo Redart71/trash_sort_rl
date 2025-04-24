@@ -4,12 +4,17 @@
 
 Ce projet vise à développer un agent d'apprentissage par renforcement pour le tri des déchets. En utilisant des techniques d'apprentissage par renforcement, nous entraînons un agent à reconnaître et à trier différents types de déchets de manière efficace.
 
+<br>
 
-![Démo du projet](assets/demo.gif)
+<p align="center">
+  <img src="assets/demo.gif" width="900" alt="Démo du projet"/>
+</p>
 
+<br>
 
 
 ## Objectifs
+
 
 * Développer un agent capable de trier efficacement des déchets simulés.
 * Comparer les performances de différentes méthodes d'apprentissage par renforcement.
