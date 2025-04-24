@@ -33,11 +33,10 @@ class TrashObject:
             ("papier", "bleue", "assets/papier-froisse.png"),
             ("verre", "verte", "assets/verre-brise.png"),
             ("canette alu", "noire", "assets/canette-de-soda.png"),
-            # Add more trash objects here
             ("champagne", "verte", "assets/champagne.png"),
             ("The", "noire", "assets/the-vert.png"),
             ("Chaussure", "noire", "assets/des-chaussures.png"),
-            ("Livre", "bleue", "assets/des-chaussures.png"),
+            ("Livre", "bleue", "assets/livre.png"),
 
         ]
         return TrashObject(*random.choice(types), headless=headless)
