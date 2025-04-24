@@ -1,12 +1,12 @@
 import numpy as np
 import pygame
 from .trash_object import TrashObject
-from .trash_env import TrashSortEnv  # Assure-toi que c’est bien le bon chemin
+from .trash_env import TrashSortEnv  
 
 class TrashSortGymEnv:
     def __init__(self, screen_width=800, screen_height=600, render_mode=False):
         self.categories = ["Plastique", "Papier" ,"Verre", "Non recyclable"]
-        self.action_space = 5  # 0=jaune, 1=bleue, 2=verte, 3=noire, 4=rien faire
+        self.action_space = 5  
 
         self.render_mode = render_mode
         self.screen_width = screen_width
