@@ -140,11 +140,13 @@ python train_random_agent.py
 
 ## Structure du projet
 
-* assets/ : Contient les ressources nécessaires pour le projet.
-* env/ : Environnement virtuel pour les dépendances Python.
-* .gitignore : Fichier pour ignorer certains fichiers et dossiers dans le dépôt Git.
-* main.py : Script principal pour exécuter le projet.
-* play_with_agent.py : Script pour interagir avec l'agent entraîné.
-* q_table.npy : Fichier contenant la table Q utilisée par l'agent.
-* train_q_learning.py : Script pour entraîner l'agent avec l'algorithme Q-learning.
-* train_random_agent.py : Script pour entraîner un agent aléatoire.
+| Fichier/Dossier | Description |
+|:--------------|:-------------|
+|assets/ | Ressources graphiques pour les objets|
+|env/ | Environnement virtuel (local)|
+|.gitignore | Fichiers/dossiers ignorés par Git|
+|main.py | Script principal de lancement|
+|play_with_agent.py | Interagir avec l’agent entraîné|
+|q_table.npy | Table Q sauvegardée pour l’agent Q-learning|
+|train_q_learning.py | Entraînement de l’agent avec Q-learning|
+|train_random_agent.py | Entraînement d’un agent aléatoire (baseline)|
