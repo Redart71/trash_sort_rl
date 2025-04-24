@@ -27,17 +27,17 @@ class TrashObject:
     @staticmethod
     def generate_random(headless=False):
         types = [
-            ("bouteille plastique", "jaune", "assets/bouteille-en-plastique.png"),
-            ("carton pizza", "bleue", "assets/pizza.png"),
-            ("journal", "bleue", "assets/journal.png"),
-            ("papier", "bleue", "assets/papier-froisse.png"),
-            ("verre", "verte", "assets/verre-brise.png"),
-            ("canette alu", "noire", "assets/canette-de-soda.png"),
+            ("bouteille plastique", "Plastique", "assets/bouteille-en-plastique.png"),
+            ("carton pizza", "Papier", "assets/pizza.png"),
+            ("journal", "Papier", "assets/journal.png"),
+            ("papier", "Papier", "assets/papier-froisse.png"),
+            ("verre", "Verre", "assets/verre-brise.png"),
+            ("canette alu", "Non recyclable", "assets/canette-de-soda.png"),
             # Add more trash objects here
-            ("champagne", "verte", "assets/champagne.png"),
-            ("The", "noire", "assets/the-vert.png"),
-            ("Chaussure", "noire", "assets/des-chaussures.png"),
-            ("Livre", "bleue", "assets/des-chaussures.png"),
+            ("champagne", "Verre", "assets/champagne.png"),
+            ("The", "Non recyclable", "assets/the-vert.png"),
+            ("Chaussure", "Non recyclable", "assets/des-chaussures.png"),
+            ("Livre", "Papier", "assets/des-chaussures.png"),
 
         ]
         return TrashObject(*random.choice(types), headless=headless)
