@@ -1,13 +1,15 @@
 import pygame
 import sys
 from env.trash_env import TrashSortEnv
+import subprocess
+
 
 # Initialisation
 pygame.init()
 screen_width, screen_height = 800, 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
-pygame.display.set_caption("Jeu de tri des déchets")
+pygame.display.set_caption("TriXel")
 
 # Chargement fond
 try:
@@ -53,7 +55,7 @@ def draw_button(text, x, y, action_name):
 
 def draw_menu():
     screen.fill((30, 30, 30))
-    title_surf = font.render("Jeu de Tri des Déchets", True, (255, 255, 255))
+    title_surf = font.render("TriXel", True, (255, 255, 255))
     screen.blit(title_surf, title_surf.get_rect(center=(screen_width//2, 100)))
 
     b1 = draw_button("Mode Humain", screen_width//2 - BUTTON_WIDTH//2, 200, "humain")
@@ -130,14 +132,20 @@ while running:
             show_end_message(screen, font, msg, screen_width, screen_height, END_SCREEN_DURATION)
             game_state = "menu"
 
-    elif game_state in ["ql", "dqn"]:
+    elif game_state == "ql":
+        pygame.quit()
+        subprocess.run(["python", "play_with_agent.py"])
+        sys.exit()
+
+
+    elif game_state in ["dqn"]:
         # Pour l’instant : placeholder, on affiche juste un message
         screen.fill((0, 0, 0))
         txt = font.render(f"{game_state.upper()} Agent en cours...", True, (255, 255, 255))
         screen.blit(txt, txt.get_rect(center=(screen_width//2, screen_height//2)))
         pygame.display.flip()
         pygame.time.delay(2000)
-        game_state = "menu"  # retour au menu après affichage
+        game_state = "menu"
 
 pygame.quit()
 sys.exit()
